@@ -12,7 +12,7 @@ public class SpawnController : MonoBehaviour{
     public float spawntag = 8;
     private Vector3[] Pos;
     private Number_wave nw;
-    private bool Endwave = false;
+    [SerializeField] private bool Endwave = false;
 
 
     void Start(){
@@ -50,12 +50,10 @@ public class SpawnController : MonoBehaviour{
     }
 
     private void WaitEndwave(){
-        for (int i = 0; i < LimitEnemy & !Endwave ; i++){
+        Endwave = true;
+        for (int i = 0; i < LimitEnemy & Endwave ; i++){
             if (_enemies[i] != null){
-                break;
-            }else{
-                print("Endwave");
-                Endwave = true; 
+                Endwave = Endwave && false;
             }
         }
     }
@@ -76,9 +74,9 @@ public class SpawnController : MonoBehaviour{
         
     private void VectorPos(){
         Pos = new Vector3[3];
-        for (int i = 0; i < 3; i++){
-            Pos[i] = new Vector3(Random.Range(-20,20), 1, Random.Range(-20, 20));
-        }
+        Pos[0] = new Vector3(-4, 2, 8);
+        Pos[1] = new Vector3(4, 2, -8);
+        Pos[2] = new Vector3(-4, 2, -9);
     }
 
     private void CreateWave() {
