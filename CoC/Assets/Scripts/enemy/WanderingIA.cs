@@ -15,29 +15,25 @@ public class WanderingIA : MonoBehaviour{
         if(AgentEnnemi != null)
         {
             Target = GameObject.Find("Capsule").GetComponent<Transform>();
-            if (Target == null)
-            {
+            if (Target == null){
                 print("warning target is null");
             }
         }
-        else
-        {
+        else{
             print("navMashAgent is null");
         }
-    }
-
-    public void setAlive(bool alive){
-        _alive = alive;
     }
     // Update is called once per frame
     void Update(){
         move();
     }
+    public void setAlive(bool alive){
+        _alive = alive;
+    }
+
 
     private void move(){
-        if (_alive){
             AgentEnnemi.SetDestination(Target.position);
-        }
     }
 
     public bool InMove(){

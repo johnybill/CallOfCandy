@@ -9,11 +9,12 @@ public class RayShooter : MonoBehaviour
     private Camera _camera;
     private Color[] _colors = new Color[3];
     [SerializeField] Image[] _images = new Image[3];
-    [SerializeField] Image[] _imagesVie = new Image[5];
+    [SerializeField] Image[] _imagesLife = new Image[5];
     [SerializeField] GameObject _gun;
     [SerializeField] TextMeshProUGUI textScore;
+    private int MAXLIFE = 5;
     private int _score = 0;
-    private int _vie = 3;
+    private int _life = 3;
     private void Awake() {
         int i;
         for(i = 0; i < 3; i++){
@@ -45,7 +46,8 @@ public class RayShooter : MonoBehaviour
                     _score += target.ReactToHit(color);
                     textScore.text = "Score : " + _score;
                 } else {
-                StartCoroutine(SphereIndicator(hit.point));
+                    Color color = FindColor();
+                    StartCoroutine(SphereIndicator(hit.point, color));
 
                 }
             }
@@ -73,11 +75,18 @@ public class RayShooter : MonoBehaviour
         }
     }
     private void AddLife(){
-        if(_vie < 5){
-            Debug.Log("test2");
-            _imagesVie[_vie].enabled = true;
-            _vie++;
+        for(int i = 0; i < MAXLIFE; i++){
+            if(_imagesLife[i].enabled == false){
+                _imagesLife[i].enabled = true;
+                break;
+            }
         }
+        /*
+        if(_life < 5){
+            Debug.Log("test2");
+            _imagesLife[_life].enabled = true;
+            _life++;
+        }*/
     }
     private Color FindColor() {
         if(_colors[0].a == 1) return _colors[0];
@@ -105,10 +114,13 @@ public class RayShooter : MonoBehaviour
         _gun.GetComponent<Renderer>().material.color = new Color(r, g, b, 1.0f);
     }
 
-    private IEnumerator SphereIndicator(Vector3 pos){
+
+    private IEnumerator SphereIndicator(Vector3 pos, Color color){
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         sphere.transform.position = pos;
-
+        sphere.transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
+        Renderer rend = sphere.GetComponent<Renderer>();
+        rend.material.color = color;
         yield return new WaitForSeconds(1);
 
         Destroy(sphere);

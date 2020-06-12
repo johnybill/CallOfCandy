@@ -31,7 +31,8 @@ public class ReactiveTarget : MonoBehaviour
         }
         rend.material.color = new Color(r, g, b, 1.0f);
         if(r == g && r == b && r == 0){ //if the candy has no more color, we destroy it.
-            StartCoroutine(Die());
+            Destructible des = GetComponent<Destructible>();
+            des.Die();
         }
         return score;
     }

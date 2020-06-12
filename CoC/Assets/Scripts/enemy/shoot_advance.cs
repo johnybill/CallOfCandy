@@ -6,6 +6,10 @@ public class shoot_advance : MonoBehaviour
 {
     private Transform Player;
     private WanderingIA Ene;
+    [SerializeField] GameObject fireballPrefab;
+    private GameObject _fireball;
+    private RaycastHit hit;
+    public AudioSource blaster;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +19,15 @@ public class shoot_advance : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (!Ene.InMove())
-        {
-            Reactive_target_player RTP = Player.GetComponent<Reactive_target_player>();
-            RTP.ReactoHit();
+    void Update(){
+        if (!Ene.InMove()){
+            transform.LookAt(Player.position);
+            if(_fireball == null){
+                blaster.Play();
+                _fireball = Instantiate(fireballPrefab) as GameObject;
+                _fireball.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                _fireball.transform.rotation = transform.rotation;
+            }
         }
     }
 
