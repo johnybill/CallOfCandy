@@ -30,7 +30,7 @@ public class Rafal_shoot : MonoBehaviour{
                     if(_fireball[i] == null){
                         blaster.Play();
                         _fireball[i] = Instantiate(fireballPrefab) as GameObject;
-                        _fireball[i].transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                        _fireball[i].transform.position = transform.TransformPoint(Vector3.forward * 1.1f);
                         _fireball[i].transform.rotation = transform.rotation;
                         break;
                     }

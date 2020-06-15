@@ -25,7 +25,7 @@ public class shoot_advance : MonoBehaviour
             if(_fireball == null){
                 blaster.Play();
                 _fireball = Instantiate(fireballPrefab) as GameObject;
-                _fireball.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                _fireball.transform.position = transform.TransformPoint(Vector3.forward * 1.1f);
                 _fireball.transform.rotation = transform.rotation;
             }
         }

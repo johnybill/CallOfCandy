@@ -7,6 +7,7 @@ public class ReactiveTarget : MonoBehaviour
 {
     private Renderer rend;
     
+
     void Start()
     {
         rend = gameObject.GetComponent<Renderer>();
