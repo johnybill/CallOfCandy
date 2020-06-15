@@ -9,12 +9,9 @@ public class RayShooter : MonoBehaviour
     private Camera _camera;
     private Color[] _colors = new Color[3];
     [SerializeField] Image[] _images = new Image[3];
-    [SerializeField] Image[] _imagesLife = new Image[5];
     [SerializeField] GameObject _gun;
     [SerializeField] TextMeshProUGUI textScore;
-    private int MAXLIFE = 5;
     private int _score = 0;
-    private int _life = 3;
     private void Awake() {
         int i;
         for(i = 0; i < 3; i++){
@@ -52,42 +49,8 @@ public class RayShooter : MonoBehaviour
                 }
             }
         }
-        if(Input.GetKeyDown(KeyCode.E)){//Pick an upgrade
-            Vector3 point = new Vector3(_camera.pixelWidth/2, _camera.pixelHeight/2, 0);
-            Ray ray = _camera.ScreenPointToRay(point);
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit)) {
-                GameObject hitObject = hit.transform.gameObject;
-                PickObject target = hitObject.GetComponent<PickObject>();
-                if(target != null){
-                    if(target.name.StartsWith("BonusMushroom")){//Add 1 life
-                        AddLife();
-                        target.ReactToHit();
-                    }
-                    else{//Add color to gun
-                        Debug.Log(Vector3.Distance(hit.point, transform.position));
-                        if(Vector3.Distance(hit.point, transform.position) < 2){
-                            AddColorToGun(target.ReactToHit());
-                        }
-                    }
-                }
-            }
-        }
     }
-    private void AddLife(){
-        for(int i = 0; i < MAXLIFE; i++){
-            if(_imagesLife[i].enabled == false){
-                _imagesLife[i].enabled = true;
-                break;
-            }
-        }
-        /*
-        if(_life < 5){
-            Debug.Log("test2");
-            _imagesLife[_life].enabled = true;
-            _life++;
-        }*/
-    }
+
     private Color FindColor() {
         if(_colors[0].a == 1) return _colors[0];
         if(_colors[1].a == 1) return _colors[1];

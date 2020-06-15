@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class Reactive_target_player : MonoBehaviour{
     // Start is called before the first frame update
-    [SerializeField] private int life; 
-    private int MAXLIFE = 5;
+    [SerializeField] private int _Life = 4; 
+    private int MAXLIFE = 4;
     private bool invisible = false;
+    private int LimitMaxLife = 10;
     private float time_invinsible = 5;
     private float next_time_invinsible = 0;
     [SerializeField] Image[] _imagesLife;
@@ -23,27 +24,31 @@ public class Reactive_target_player : MonoBehaviour{
     }
 
     public void ReactoHit(){
-        print("touch");
+        Debug.Log("touch");
         if (Time.time > next_time_invinsible){
-            for (int i = 0; i < MAXLIFE; i++){
-                if (_imagesLife[i].enabled == false){
-                    if (i >= 1) _imagesLife[i - 1].enabled = false;
-                    if (i == 1) print("I'm Dead !!!!!!");
-                    break;
+            _Life--;
+            if (_Life >= 0){
+                if(_Life == 0){
+                    Debug.Log("I'm Dead !!!!!!");
+                }
+                else{
+                    _imagesLife[_Life].enabled = false;
                 }
             }
             next_time_invinsible = Time.time + time_invinsible;
         }
-        
-        /*
-        life--;
-        if(life >= 0) UILife[life].enabled = false;
-        if (life == 0){
-            print("I'm DEAD !!!!!!!!!!!!!!");
-        }*/
     }
 
-    private IEnumerator Die()
+    private void AddLife(){
+        if (MAXLIFE < LimitMaxLife) {
+            _imagesLife[_Life].enabled = true;
+            _Life++;
+            MAXLIFE++;
+        }
+    }
+
+
+        private IEnumerator Die()
     {
         this.transform.Rotate(-75, 0, 0);
 
