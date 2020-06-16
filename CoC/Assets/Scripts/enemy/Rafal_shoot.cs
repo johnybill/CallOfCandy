@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*classe make rafal fire of candy
+ */
 public class Rafal_shoot : MonoBehaviour{
     private Transform Player;
     private WanderingIA Ene;
@@ -12,13 +14,15 @@ public class Rafal_shoot : MonoBehaviour{
     private float wait_shoot = 0;
     public AudioSource blaster;
     RaycastHit hit;
-    // Start is called before the first frame update
 
+    
+    // Start is called before the first frame update
     void Start(){
         Player = GameObject.Find("Capsule").GetComponent<Transform>();
         Ene = GetComponent<WanderingIA>();
         _fireball = new GameObject[Limit_Fire];
     }
+
 
     // Update is called once per frame
     void Update(){

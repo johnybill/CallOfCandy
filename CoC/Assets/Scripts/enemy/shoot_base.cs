@@ -10,7 +10,10 @@ public class shoot_base : MonoBehaviour{
     private Animator _animator;
     public AudioSource whoosh;
 
-
+    /*
+     * this class handles the close attack of the basic candys.
+     * basic candy == blue, red, green
+     */
 
     // Start is called before the first frame update
     void Start(){
@@ -25,21 +28,27 @@ public class shoot_base : MonoBehaviour{
         
     }
     IEnumerator Attack(){
-        while (true)
-        {
+        while (true){
+            /*test the minimum distance to attack */
             if (Vector3.Distance(Player.position, transform.position) < 1.5){
                 transform.LookAt(Player.position);
+                /*start animation attack*/
                 _animator.SetBool("close", true);
+                /*start sound attack*/
                 whoosh.Play();
                 yield return new WaitForSeconds(1f);
-                if (Vector3.Distance(Player.position, transform.position) < 1)
-                {
+                /*wait 1 second and test if the distance is enough close for touch
+                 after 1 seconds the candy is in the middle of animation. */
+                if (Vector3.Distance(Player.position, transform.position) < 1){
                     Reactive_target_player RTP = Player.GetComponent<Reactive_target_player>();
                     RTP.ReactoHit();
                 }
+
                 yield return new WaitForSeconds(1f);
+                /*the animation attack is finished*/
                 _animator.SetBool("close", false);
             }
+            /*wait 0.5 second for the next attack*/
             yield return new WaitForSeconds(0.5f);
         }  
     }

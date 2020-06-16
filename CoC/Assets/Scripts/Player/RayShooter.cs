@@ -4,26 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class RayShooter : MonoBehaviour
-{
+
+/*this class manages the appearance of the weapons, 
+ * the type of colors used by the weapon, 
+ * the color of the fired projectile.
+ * 
+ */
+
+
+public class RayShooter : MonoBehaviour{
     private Camera _camera;
     private Color[] _colors = new Color[3];
     [SerializeField] Image[] _images = new Image[3];
     [SerializeField] GameObject _gun;
     [SerializeField] TextMeshProUGUI textScore;
     private int _score = 0;
+
+
+
     private void Awake() {
         int i;
         for(i = 0; i < 3; i++){
             _colors[i] = _images[i].color;
         }
     }
+    
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         _camera = GetComponent <Camera>();
     }
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -51,16 +62,20 @@ public class RayShooter : MonoBehaviour
         }
     }
 
+
     private Color FindColor() {
         if(_colors[0].a == 1) return _colors[0];
         if(_colors[1].a == 1) return _colors[1];
         return _colors[2];
     }
+
+
     private int IFindColor() {
         if(_colors[0].a == 1) return 0;
         if(_colors[1].a == 1) return 1;
         return 2;
     }
+
 
     private void AddColorToGun(Color color){
         int i;
@@ -77,7 +92,10 @@ public class RayShooter : MonoBehaviour
         _gun.GetComponent<Renderer>().material.color = new Color(r, g, b, 1.0f);
     }
 
-
+    /*
+     * 
+     * 
+     */
     private IEnumerator SphereIndicator(Vector3 pos, Color color){
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         sphere.transform.position = pos;

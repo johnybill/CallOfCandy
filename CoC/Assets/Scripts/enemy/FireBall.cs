@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FireBall : MonoBehaviour{
-    public float speed = 10.0f;
-    public int damage = 1;
-
-
+    public float speed;
     // Update is called once per frame
     void Update(){
         transform.Translate(0, 0, speed * Time.deltaTime);

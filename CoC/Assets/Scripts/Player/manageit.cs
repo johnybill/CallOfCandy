@@ -8,7 +8,7 @@ public class manageit : MonoBehaviour
 
 
     [SerializeField] private GameObject[] ItemPrefab;
-    private double[] ProbabilityItems = new double[] { 0.17, 0.34, 0.57, 0.85, 1 };
+    private double[] ProbabilityItems = new double[] { 0.27, 0.54, 0.85, 1 };
     private System.Random Rand = new System.Random();
     private int LimitItem = 5;
 

@@ -2,6 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using static System.Random;
+
+/* This class manages the invocation of the effects of the different bonuses the player has taken,
+ * each effect is represented by a number
+ * 
+ * Number 1 - Heal Bonus -- restore life
+ * Number 2 - Add Life Bonus -- increases the maximum life by 1
+ * Number 3 - Merge Bonus -- 
+ * Number 4 - WhitePower Bonus
+ * 
+ */
 public class CollectibleItem : MonoBehaviour{
 
 
@@ -25,9 +35,6 @@ public class CollectibleItem : MonoBehaviour{
                     Debug.Log("Merge Bonus");
                     break;
                 case 4:
-                    Debug.Log("Shield Bonus");
-                    break;
-                case 5:
                     Debug.Log("WhitePower Bonus");
                     break;
             }
