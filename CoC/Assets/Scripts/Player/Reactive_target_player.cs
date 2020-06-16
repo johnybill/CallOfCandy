@@ -13,15 +13,6 @@ public class Reactive_target_player : MonoBehaviour{
     private float next_time_invinsible = 0;
     [SerializeField] Image[] _imagesLife;
 
-    void Start(){
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ReactoHit(){
         Debug.Log("touch");
@@ -39,17 +30,32 @@ public class Reactive_target_player : MonoBehaviour{
         }
     }
 
-    private void AddLife(){
+    public void AddLife(){
         if (MAXLIFE < LimitMaxLife) {
             _imagesLife[_Life].enabled = true;
             _Life++;
             MAXLIFE++;
         }
+        else
+        {
+            if (_Life < MAXLIFE)
+            {
+                _imagesLife[_Life].enabled = true;
+                _Life++;
+            }
+        }
+        
+    }
+
+    public void Heal(){
+        _Life = MAXLIFE;
+        for (int i = 0; i < MAXLIFE; i++){
+            _imagesLife[i].enabled = true;
+        }
     }
 
 
-        private IEnumerator Die()
-    {
+    private IEnumerator Die(){
         this.transform.Rotate(-75, 0, 0);
 
         yield return new WaitForSeconds(1.5f);

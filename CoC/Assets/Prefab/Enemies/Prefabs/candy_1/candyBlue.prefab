@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86dc04ba09a3254fb4517143d646074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProbaItem: 0.33
   destructyedVersion: {fileID: 5556097678562410747, guid: 36ad0e725f75a0a4a8e675a0f9688885,
     type: 3}
 --- !u!95 &1497284720256599267

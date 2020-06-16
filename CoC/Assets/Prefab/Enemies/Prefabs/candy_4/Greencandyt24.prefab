@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86dc04ba09a3254fb4517143d646074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProbaItem: 0.33
   destructyedVersion: {fileID: 100000, guid: c86ddccfedecb08468942bf7c6d4b219, type: 3}
 --- !u!95 &2297985125062221715
 Animator:

@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 3834316887180890278}
   - component: {fileID: 390545829596860686}
   - component: {fileID: 7297087883170921770}
-  - component: {fileID: 9077752231813345503}
   - component: {fileID: 7951001117739068838}
   - component: {fileID: 8883479005989125541}
   m_Layer: 0
@@ -145,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86dc04ba09a3254fb4517143d646074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProbaItem: 0.66
   destructyedVersion: {fileID: 5556097678562410747, guid: ce6f6e78bc9f71c47b0e787a321f3126,
     type: 3}
 --- !u!95 &3834316887180890278
@@ -194,23 +194,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 1609805438510725453, guid: d0ba31c3bac2fb140b6a82e074262165,
     type: 3}
-  Limit_Fire: 5
+  Limit_Fire: 10
   time_shoot: 0.3
   blaster: {fileID: 8883479005989125541}
---- !u!114 &9077752231813345503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8215092176333701632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86dc04ba09a3254fb4517143d646074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destructyedVersion: {fileID: 5556097678562410747, guid: ce6f6e78bc9f71c47b0e787a321f3126,
-    type: 3}
 --- !u!82 &7951001117739068838
 AudioSource:
   m_ObjectHideFlags: 0

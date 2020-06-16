@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f942c8b472c3a243882305a8d86ca42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumberItem: 1
 --- !u!114 &8707910197783977644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,27 +259,27 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.15
       objectReference: {fileID: 0}
-    - target: {fileID: 457920, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
+    - target: {fileID: 448152, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
       objectReference: {fileID: 0}
-    - target: {fileID: 457920, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
+    - target: {fileID: 448152, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.15
       objectReference: {fileID: 0}
-    - target: {fileID: 457920, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
+    - target: {fileID: 448152, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15
       objectReference: {fileID: 0}
-    - target: {fileID: 448152, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
+    - target: {fileID: 457920, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
       objectReference: {fileID: 0}
-    - target: {fileID: 448152, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
+    - target: {fileID: 457920, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.15
       objectReference: {fileID: 0}
-    - target: {fileID: 448152, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
+    - target: {fileID: 457920, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15
       objectReference: {fileID: 0}

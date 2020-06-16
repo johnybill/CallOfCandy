@@ -36,31 +36,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7c3b03fd89148a14abfd72f9bda88d7a, type: 3}
-    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
-        type: 3}
-      propertyPath: MinDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
-        type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3635965460337559503, guid: 7914add3632bff241a89b70e279ab453,
         type: 3}
       propertyPath: m_Name
@@ -167,6 +142,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5556097678562410747, guid: ce6f6e78bc9f71c47b0e787a321f3126,
         type: 3}
+    - target: {fileID: 7030815458965325617, guid: 7914add3632bff241a89b70e279ab453,
+        type: 3}
+      propertyPath: ProbaItem
+      value: 0.66
+      objectReference: {fileID: 0}
     - target: {fileID: 3899019197068255263, guid: 7914add3632bff241a89b70e279ab453,
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
@@ -271,6 +251,31 @@ PrefabInstance:
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].outSlope
       value: -0.20007975
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c3b03fd89148a14abfd72f9bda88d7a, type: 3}
+    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
+        type: 3}
+      propertyPath: MinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797894427840859912, guid: 7914add3632bff241a89b70e279ab453,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8573117104857335896, guid: 7914add3632bff241a89b70e279ab453, type: 3}
